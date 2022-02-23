@@ -1,0 +1,252 @@
+body {
+  padding: 5%;
+  background-color: #eb2f64;
+}
+
+html {
+  font-size: 62.51%;
+}
+
+main {
+  background-color: #faf9f9;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.199);
+}
+
+header {
+  background-color: #f4f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+header .header_logo {
+  margin-left: 3rem;
+}
+header .header_logo img {
+  width: 50%;
+}
+
+.header_search {
+  position: relative;
+}
+.header_search input {
+  display: inline-block;
+  width: 45rem;
+  height: 3rem;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  color: #faf9f9;
+  background-color: #999;
+}
+.header_search label {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.header__menu__1 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.header__menu__1 img {
+  width: 30%;
+  border-radius: 50%;
+}
+
+.haeder__name {
+  font-size: 1.6rem;
+  color: #777;
+}
+
+.divazizjon {
+  display: flex;
+}
+
+.menu_section {
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu_section--2 {
+  margin-bottom: 10%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.menu_section__1 {
+  width: 100%;
+  vertical-align: middle;
+  padding: 2rem 0;
+}
+.menu_section__1:hover {
+  background-color: #ff3366;
+}
+.menu_section--1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 4rem;
+  row-gap: 4rem;
+}
+.menu_section--1 a {
+  font-family: sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #faf9f9;
+  letter-spacing: 0.5rem;
+  margin-left: 3rem;
+}
+
+.main_section {
+  display: flex;
+  flex-direction: column;
+}
+.main_section__images {
+  display: flex;
+}
+.main_section__images img {
+  width: 100%;
+}
+.main_section__hotel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+.main_section__hotel--1 {
+  display: flex;
+  align-items: center;
+  column-gap: 5rem;
+}
+.main_section__hotel--2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hotel_icons {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.heading_first {
+  font-size: 2.6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-left: 3rem;
+  color: #999;
+}
+
+.btn {
+  color: #eb2f64;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  text-decoration: none;
+  border: none;
+  border-bottom: 2px solid #eb2f64;
+  background-color: transparent;
+}
+
+.hotel_votes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 1rem;
+  text-align: center;
+  background-color: #ff3366;
+}
+
+.number {
+  margin: 0.5rem;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.heading-tertiary {
+  margin: 0.5rem;
+  font-size: 1.6rem;
+  color: white;
+}
+
+.cards {
+  display: flex;
+  padding: 5%;
+  font-size: 1.6rem;
+  gap: 3rem;
+}
+.cards__1 {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.247);
+  gap: 2rem;
+  padding: 3%;
+  border-radius: 1rem;
+}
+.cards__1--2 {
+  line-height: 1.8;
+  color: #777;
+  font-size: 1.7rem;
+}
+.cards__2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30%;
+}
+.cards__2 p {
+  width: 150%;
+  color: #777;
+  text-transform: capitalize;
+}
+.cards__2-img {
+  display: flex;
+  gap: -1rem;
+}
+.cards__2-img img {
+  width: 20%;
+  border-radius: 50%;
+  margin-right: -1rem;
+  border: 0.5rem solid white;
+}
+
+.card__1-list {
+  color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  text-transform: capitalize;
+}
+.card__1-list i {
+  color: #eb2f64;
+}
+.card__1-list-2 {
+  justify-items: flex-start;
+}
+
+.cards__1-list--1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */
