@@ -16,12 +16,45 @@ $grey-dark-3: #999;
 //   margin: 0;
 //   padding: 0;
 // }
+@mixin responsive($breakpoint) {
+  @if $breakpoint == big {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab_land {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == portrait {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+}
 body {
   padding: 5%;
   background-color: $primary;
+  @include responsive(tab_land) {
+    padding: 0;
+    margin: 0;
+  }
 }
 html {
   font-size: 62.51%;
+  @include responsive(portrait) {
+    font-size: 56.25%;
+  }
+  @include responsive(phone) {
+    font-size: 50%;
+  }
 }
 main {
   background-color: $grey-light-1;
@@ -60,6 +93,9 @@ header {
     font-size: 1.6rem;
     cursor: pointer;
   }
+  @include responsive(phone) {
+    display: none;
+  }
 }
 .header__menu {
   display: flex;
@@ -72,7 +108,16 @@ header {
     img {
       width: 30%;
       border-radius: 50%;
+      @include responsive(portrait) {
+        width: 30%;
+      }
     }
+    @include responsive(portrait) {
+      gap: 1rem;
+    }
+  }
+  @include responsive(portrait) {
+    gap: 1rem;
   }
 }
 .haeder__name {
@@ -81,6 +126,9 @@ header {
 }
 .divazizjon {
   display: flex;
+  @include responsive(tab_land) {
+    flex-direction: column;
+  }
 }
 .menu_section {
   width: 100%;
@@ -88,11 +136,18 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include responsive(tab_land) {
+    display: block;
+    flex-direction: row;
+  }
   &--2 {
     margin-bottom: 10%;
     padding: 1rem;
     font-size: 1.2rem;
     text-align: center;
+    @include responsive(tab_land) {
+      display: none;
+    }
   }
 
   &__1 {
@@ -109,6 +164,11 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    @include responsive(tab_land) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0;
+    }
 
     margin-top: 4rem;
     row-gap: 4rem;
@@ -120,6 +180,7 @@ header {
       color: $grey-light-1;
       letter-spacing: 0.5rem;
       margin-left: 3rem;
+      text-align: center;
     }
   }
 }
@@ -141,12 +202,18 @@ header {
       display: flex;
       align-items: center;
       column-gap: 5rem;
+      @include responsive(phone) {
+        column-gap: 0;
+      }
     }
     &--2 {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 4rem;
+      @include responsive(phone) {
+        gap: 2rem;
+      }
     }
   }
 }
@@ -162,6 +229,17 @@ header {
   text-transform: uppercase;
   margin-left: 3rem;
   color: $grey-dark-3;
+  @include responsive(tab_land) {
+    font-size: 2.2rem;
+  }
+  @include responsive(portrait) {
+    font-size: 2rem;
+  }
+  @include responsive(phone) {
+    font-size: 1.4rem;
+    margin: 0;
+    text-align: center;
+  }
 }
 .btn {
   color: $primary;
@@ -171,6 +249,9 @@ header {
   border: none;
   border-bottom: 2px solid $primary;
   background-color: transparent;
+  @include responsive(phone) {
+    font-size: 1.4rem;
+  }
 }
 .hotel_votes {
   display: flex;
@@ -179,6 +260,10 @@ header {
   padding: 0 1rem;
   text-align: center;
   background-color: $primary-light;
+  @include responsive(phone) {
+    padding: 0;
+    flex-direction: row;
+  }
 }
 .number {
   margin: 0.5rem;
@@ -190,22 +275,43 @@ header {
   font-size: 1.6rem;
   color: white;
 }
+.heading_three {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.color {
+  font-size: 2.8rem;
+  color: $primary-light;
+}
 .cards {
   display: flex;
   padding: 5%;
   font-size: 1.6rem;
+
   gap: 3rem;
+  @include responsive(portrait) {
+    font-size: 1.4rem;
+    padding: 3%;
+  }
+  @include responsive(phone) {
+    flex-direction: column;
+    align-items: center;
+  }
   &__1 {
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.247);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.247);
 
     gap: 2rem;
     padding: 3%;
     border-radius: 1rem;
+    @include responsive(portrait) {
+      padding: 1%;
+    }
     &--2 {
       line-height: 1.8;
       color: $grey-dark-2;
@@ -221,6 +327,9 @@ header {
       width: 150%;
       color: $grey-dark-2;
       text-transform: capitalize;
+      @include responsive(portrait) {
+        width: 200%;
+      }
     }
     &-img {
       display: flex;
@@ -256,4 +365,58 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+}
+.cards--2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  color: $grey-dark-2;
+  font-size: 1.6rem;
+  &__div {
+    background-color: white;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.247);
+    padding: 5%;
+    border-radius: 1rem;
+    p {
+      line-height: 1.8;
+    }
+  }
+}
+.div__user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    width: 25%;
+    border-radius: 50%;
+    @include responsive(phone) {
+      width: 20%;
+    }
+  }
+}
+.button_section {
+  background-color: white;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 1.5rem 4rem;
+  border: none;
+  color: white;
+  background-image: linear-gradient(to right, $primary-light, $primary-dark);
+  @include responsive(phone) {
+    margin-top: 4rem;
+  }
+}
+.div_name {
+  margin-left: -4rem;
+  @include responsive(phone) {
+    position: relative;
+    right: 10%;
+  }
 }
